@@ -32,6 +32,10 @@ app.use(express.static('public/map-editor'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
 app.get('/territories.json', (req, res) => {
     res.sendFile(__dirname + "/territories.json");
 });
