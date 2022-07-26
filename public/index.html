@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Realm Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="map"></div>
+    <h2 id="settings-button">⚙</h2>
+    <div id="settings-menu">
+        <h1>Settings</h1>
+
+        <label>Map Projection</label>
+        <select id="select-projection" name="projection">
+            <option value="equirectangular">Equirectangular (default)</option>
+            <option value="mercator">Mercator</option>
+            <option value="globe">Globe</option>
+            <option value="albers">Albers</option>
+            <option value="equalEarth">Equal Earth</option>
+            <option value="lambertConformalConic">
+            Lambert Conformal Conic
+            </option>
+            <option value="naturalEarth">Natural Earth</option>
+            <option value="winkelTripel">Winkel Tripel</option>
+        </select>
+
+        <br><br>
+        <input type="checkbox" id="toggle-interactive">
+        <label> Interactive Map</label>
+
+        <br><br>
+        <input type="checkbox" id="toggle-borders" checked>
+        <label> Show Real World Borders</label>
+
+        <br><br>
+        <button id="close-settings-menu">Close</button>
+    </div>
+    <div id="content">
+        <h1>Realm Map</h1>
+        <h3 id="legend">
+            
+        </h3>
+        <a href="/map-editor" id="map-editor-link" style="display:none">Map Editor</a>
+    </div>
+</body>
+</html>
