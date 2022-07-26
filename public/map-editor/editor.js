@@ -113,6 +113,7 @@ function showTerritoryLists() {
       let li = document.createElement("li");
       li.innerText = countriesByCode[country];
       li.oncontextmenu = async function(e) {
+        if (!window.confirm(`Are you sure you want to delete ${countriesByCode[country]} from ${territory}`)) return;
         e.preventDefault();
         let res = fetch(`/remove-country?country=${country}`, {method: 'POST'});
         location.reload();
@@ -123,6 +124,7 @@ function showTerritoryLists() {
       let li = document.createElement("li");
       li.innerText = fragment + " (fragment)"
       li.oncontextmenu = async function(e) {
+        if (!window.confirm(`Are you sure you want to delete ${fragment} from ${territory}`)) return;
         e.preventDefault();
         let res = fetch(`/remove-fragment?fragmentName=${fragment}`, {method: 'POST'});
         location.reload();
