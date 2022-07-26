@@ -21,7 +21,8 @@ var map;
 var settings = {
   projection: 'equirectangular',
   interactive: false,
-  borders: true
+  borders: true,
+  markers: true
 }
 function setSetting(setting, value) {
   settings[setting] = value;
@@ -41,6 +42,7 @@ window.addEventListener('load', e => {
 
   document.querySelector("#toggle-interactive").checked = settings.interactive;
   document.querySelector("#toggle-borders").checked = settings.borders;
+  document.querySelector("#toggle-markers").checked = settings.markers;
 
   loadMap();
 });
@@ -55,6 +57,10 @@ function loadMap() {
     interactive: settings.interactive
   });
   map.setZoom(1.6);
+
+  map.on('click', e => {
+    console.log(Object.values(e.lngLat.wrap()));
+  });
 
   var territories;
   fetch('../territories.json')
@@ -111,6 +117,12 @@ function loadMap() {
             }
           });
         }
+
+        if (settings.markers && territories[territory].base) {
+          new mapboxgl.Marker({ color: territories[territory].color })
+            .setLngLat(territories[territory].base)
+            .addTo(map);
+        }
     }
 
     let legendString = Object.keys(territories).map(territory => {
@@ -140,5 +152,10 @@ document.querySelector("#toggle-interactive").onchange = function() {
 document.querySelector("#toggle-borders").onchange = function() {
   let value = document.querySelector("#toggle-borders").checked;
   setSetting('borders', value);
+  setTimeout(_ => location.reload(), 500);
+}
+document.querySelector("#toggle-markers").onchange = function() {
+  let value = document.querySelector("#toggle-markers").checked;
+  setSetting('markers', value);
   setTimeout(_ => location.reload(), 500);
 }

@@ -1,6 +1,7 @@
 {
   "Ottoman Empire (Felix)": {
     "color": "#d2361e",
+    "base": [26.786994060026245, 40.45836274478621],
     "countries": [
       "TUR",
       "GRC",
@@ -250,6 +251,7 @@
   },
   "Free American Empire (Hugo)": {
     "color": "#0085EB",
+    "base": [-115.74540919007791, 37.268069991517685],
     "countries": [
       "USA",
       "MEX",
@@ -598,6 +600,7 @@
   },
   "German Empire (Oliver)": {
     "color": "#15A117",
+    "base": [11.303426773536216, 53.93300730295907],
     "countries": [
       "DEU",
       "DNK",
@@ -2117,6 +2120,7 @@
   },
   "Irish Empire (Jonny)": {
     "color": "#7E5A16",
+    "base": [-7.572906933382001, 53.10841591183729],
     "countries": [
       "IRL",
       "CAN",
@@ -3143,6 +3147,7 @@
   },
   "Chad Kingdom (Derek)": {
     "color": "#FFAF18",
+    "base": [19.522617228941385, 14.291269148703542],
     "countries": [
       "TCD",
       "DZA",
@@ -3646,6 +3651,7 @@
   },
   "Djibouti Empire (Henry)": {
     "color": "#FDC3FF",
+    "base": [42.60904451121996, 11.599023182972829],
     "countries": [
       "DJI",
       "KEN",
@@ -6072,6 +6078,7 @@
   },
   "EMTNT (EMTNT)": {
     "color": "#FFFB00",
+    "base": [-89.42985116006224, 43.50330209789986],
     "countries": [],
     "fragments": {
       "Wisconsin": [
